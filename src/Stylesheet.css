@@ -1,0 +1,17 @@
+
+.container{
+    position: absolute;
+    width: 500;
+    height: 500;
+    right: 980px;
+    justify-content: center;
+    top:200px;
+}
+
+
+subcontainer{
+  width: 10px;
+  height:100px;
+  right: 150px;
+  top:150px;
+}
