@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "./card";
 import Form from "./Form";
-import { positions } from "@mui/system";
+
 
 function Contact() {
   const [user, setUser] = useState([]);
@@ -14,7 +14,7 @@ function Contact() {
   const getNumber = (num: any) => {
     if (num !== 0) setFormValue(num);
   };
-let [data,setData] = useState();
+
   useEffect(() => {
     const getData = async () => {
       await axios
