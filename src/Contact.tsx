@@ -14,7 +14,7 @@ function Contact() {
   const getNumber = (num: any) => {
     if (num !== 0) setFormValue(num);
   };
-
+let [data,setData] = useState();
   useEffect(() => {
     const getData = async () => {
       await axios
