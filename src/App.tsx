@@ -13,5 +13,7 @@ export default function App() {
     <div className="App">
       <Contact />
     </div>
+    
   );
+ 
 }

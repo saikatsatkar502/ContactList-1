@@ -22,12 +22,13 @@ function Contact() {
         })
         .catch((err) => {
           console.log(err);
+        
         });
     })();
   }, [numberOfContacts]);
 
   return (
-    <div style={{background:"transparent"}}>
+    <div>
       <div className="container">
         <Form numberOfContacts={numberOfContacts} setNumberOfContacts={setNumberOfContacts} />
       </div>
