@@ -1,47 +1,29 @@
 import React, { useState } from "react";
 import './Stylesheet.css'
-export default function Form(props:any) {
-  const [formValue, setFromValue] = useState(0);
-
-  function toconvetintonumber(e: string) {
-    if (e !== "0") {
-      let num = Number(e);
-      setFromValue(num);
-    }
-  }
+export default function Form(props: any) {
+  const [formValue, setFromValue] = useState<number>(0);
 
   function handleSubmit(e: any) {
     e.preventDefault();
-    props.getNumber(formValue);
-    setFromValue(0);
+    props.setNumberOfContacts(formValue)
   }
-  
+
   return (
     <div id="Form" className="userform">
       <form
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column"
-        }}
+       
         onSubmit={handleSubmit}
       >
-        <label>Please Enter the input </label>
+        <label>Please enter the input </label>
         <input
-          type="numbers"
           name="userinput"
           value={formValue}
-          onChange={(e) => toconvetintonumber(e.target.value)}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column"
-          }}
+          onChange={(e) => setFromValue(parseInt(e.target.value))}
+          className="InputBox"
+       
         />
 
-        <input type="submit" value="Submit" style={{color:"white",backgroundColor:"blue",margin:"2%",borderRadius:"40%"}} />
+        <input type="submit" value="Submit"  className= "SubmitButton"  />
       </form>
     </div>
   );

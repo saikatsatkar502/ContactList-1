@@ -5,57 +5,40 @@ import './Stylesheet.css';
 
 export default function Card(props:any) {
     return (
+      <div className='backgroundImage'>
       <div
-        className="subcontainer"
-        style={{
-          position: "relative",
-          left: "1020px",
-          top: "-50px",
-          width: "450px",
-          height: "380px",
-          overflowY: "scroll",
-          overflowX: "hidden",
-          scrollBehavior: "smooth",
-          scrollbarGutter: "none",
-          background: "transparent",
-          zIndex: "1",
-          border: "none",
-          borderRadius: "5%"
-        }}>
+        className="subcontainer">
         {props.userData.map((con:any) => {
           return (
+            <div className='card'>
           <div
             key={con.email}
-            style={{
-              display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              textAlign: "left",
-              padding: "2px 1px ",
-              margin: "3% 0"
-            }}
+            className="email"
+           
           >
             <img
               src={con.picture.medium}
+              className="img"
               alt="user"
-              style={{ borderRadius: "50%", width: "60px" }}
+           
             />
-            <div
+             <div
+             className='font'
               style={{
-                padding: "2%",
-                border: "none",
-                fontSize: "14px",
-                borderBottom: "2px solid lightgrey"
+                
               }}
             >
+           
               <b>{con.name.title}- {con.name.first}-{con.name.last}</b>{" "}
               
               <br />
               {con.email}
+              </div>
             </div>
           </div>
          );
         })}
+      </div>
       </div>
     );
   }

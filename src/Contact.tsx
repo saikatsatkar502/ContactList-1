@@ -8,50 +8,35 @@ import Form from "./Form";
 
 
 function Contact() {
-  const [user, setUser] = useState([]);
-  const [formValue, setFormValue] = useState();
-
-  const getNumber = (num: any) => {
-    if (num !== 0) setFormValue(num);
-  };
+  const [contacts, setContacts] = useState([]);
+  const [numberOfContacts, setNumberOfContacts] = useState<number>(0);
 
   useEffect(() => {
-    const getData = async () => {
+    (async function () {
+      if (numberOfContacts === 0) return;
+
       await axios
-        .get("https://randomuser.me/api/?results=" + formValue)
+        .get(`https://randomuser.me/api/?results=${numberOfContacts}`)
         .then((res) => {
-          setUser(res.data.results);
+          setContacts(res.data.results);
         })
         .catch((err) => {
           console.log(err);
         });
-    };
-    getData();
-  }, [formValue]);
+    })();
+  }, [numberOfContacts]);
 
   return (
-   <div style={{
-    right:"450px",
-    height: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
-  }} >
-  <div className="container">
-        <Form getNumber={getNumber} />
+    <div style={{background:"transparent"}}>
+      <div className="container">
+        <Form numberOfContacts={numberOfContacts} setNumberOfContacts={setNumberOfContacts} />
       </div>
-      <Card userData={user} />
-      <div    style={{
-          backgroundImage: `url("../images/iphoneimage.png")`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "480px 600px",
-          backgroundPosition:"550px 50px",
-          height: "100vh",
-          width: "100%"
-        }}>
-
-        </div>
-        </div>
+      <Card userData={contacts} />
+    
+    
+   
+      
+    </div>
   );
 }
 

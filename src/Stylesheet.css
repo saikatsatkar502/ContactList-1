@@ -1,3 +1,23 @@
+.userform{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
+.InputBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+.SubmitButton{
+
+  color: aliceblue;
+  background-color: red;
+  margin: 5px;
+  border-radius: 10px;
+}
 
 .container{
     position: absolute;
@@ -5,13 +25,66 @@
     height: 500;
     right: 980px;
     justify-content: center;
+    
     top:200px;
 }
-
-
-subcontainer{
-  width: 10px;
-  height:100px;
-  right: 150px;
-  top:150px;
+.backgroundImage{
+  background-image: url('/Users/ar-pappu.thakur/my-project2/public/images/iphoneimage.png');
+  background-repeat: no-repeat;
+  background-size: 580px 700px;
+  background-position: 750px;
+  top:15px;
+  height: 680px;
+ 
 }
+.subcontainer{
+  position: absolute ;
+  left: 900px;
+  top: 65px;
+  width: 350px;
+  height: 580px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-Behavior: smooth;
+  scrollbar-Gutter: none;
+  background: transparent;
+  z-index: 1;
+  border: none;
+  border-Radius: 5%;
+  
+ 
+}
+.email{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  padding: 2px 1px;
+  margin: 3% 0;
+
+}
+.img{
+  border-radius: 50%;
+  width:50px;
+}
+.font{
+  padding: 2%;
+  border: none;
+  font-Size: 14px;
+}
+.card{
+
+  
+  height: 60px ;
+  width:320px ;
+  background: rgba(0,0,0,0.1);
+  
+  z-index: -1;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: auto;
+  box-shadow: #000;
+  
+
+}
+
